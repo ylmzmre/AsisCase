@@ -1,0 +1,15 @@
+
+    <div class="user-card" *ngIf="!isLoading">
+      <img class="avatar" [src]="'https://i.pravatar.cc/150?u=' + user.id" alt="{{ user.name }}" class="avatar" />
+      <h2 class="name">{{ user.name }}</h2>
+      <p><strong>Kullanıcı Adı:</strong> {{ user.username }}</p>
+      <p class="email"><strong>Email:</strong> {{ user.email }}</p>
+      <p class="phone"><strong>Telefon:</strong> {{ user.phone }}</p>
+      <p class="website"><strong>Website:</strong> <a href="http://{{ user.website }}" target="_blank"> {{ user.website }}</a></p>
+      <p class="location"><strong>Adres:</strong> {{ user.address.street }}, {{ user.address.suite }}, {{ user.address.city }}, {{ user.address.zipcode }}</p>
+      <p class="company"><strong>Şirket:</strong> {{ user.company.name }}</p>
+      <p class="catchPhrase"><strong>Slogan:</strong> "{{ user.company.catchPhrase }}"</p>
+      <button (click)="goBack()" class="back-button">Geri Dön</button>
+    </div>
+
+  <app-loading *ngIf="isLoading"></app-loading>
